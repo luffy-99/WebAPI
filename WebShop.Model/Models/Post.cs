@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WebShop.Model.Abstract;
 
 namespace WebShop.Model.Models
 {
     [Table("Posts")]
-    public class Post
+    public class Post: Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -35,5 +37,7 @@ namespace WebShop.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { set; get; }
+       
+        public virtual IEnumerable<PostTag> PostTags { set; get; }
     }
 }

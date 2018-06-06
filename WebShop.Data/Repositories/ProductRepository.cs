@@ -8,7 +8,7 @@ using WebShop.Model.Models;
 
 namespace WebShop.Data.Repositories
 {
-    public interface IProductRepository
+    public interface IProductRepository: IRepository<Product>
     {
 
     }

@@ -8,13 +8,13 @@ using WebShop.Model.Models;
 
 namespace WebShop.Data.Repositories
 {
-    public interface IFooterRepository: IRepository<Footer>
+    public interface ISupportOnlineRepository : IRepository<SupportOnline>
     {
 
     }
-    public class FooterRepository : RepositoryBase<Footer>, IFooterRepository
+    public class SupportOnlineRepository : RepositoryBase<SupportOnline>, ISupportOnlineRepository
     {
-        public FooterRepository(IDbFactory dbFactory): base(dbFactory)
+        public SupportOnlineRepository(IDbFactory dbFactory) : base(dbFactory)
         {
 
         }

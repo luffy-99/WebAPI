@@ -8,13 +8,13 @@ using WebShop.Model.Models;
 
 namespace WebShop.Data.Repositories
 {
-    public interface IFooterRepository: IRepository<Footer>
+    public interface IPostTagRepository: IRepository<PostTag>
     {
 
     }
-    public class FooterRepository : RepositoryBase<Footer>, IFooterRepository
+    public class PostTagRepository : RepositoryBase<PostTag>, IPostTagRepository
     {
-        public FooterRepository(IDbFactory dbFactory): base(dbFactory)
+        public PostTagRepository(IDbFactory dbFactory): base(dbFactory)
         {
 
         }
