@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WebShop.Model.Abstract;
 
 namespace WebShop.Model.Models
 {
     [Table("PostCategories")]
-    public class PostCategory
+    public class PostCategory : Auditable
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
