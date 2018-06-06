@@ -10,7 +10,7 @@ namespace WebShop.Data
 {
     public class WebShopDbContext : DbContext
     {
-        public WebShopDbContext() : base("WebShopDbContext")
+        public WebShopDbContext() : base("WebShop")
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
