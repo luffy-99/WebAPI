@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using WebShop.Model.Models;
 
 namespace WebShop.Data
@@ -14,6 +9,7 @@ namespace WebShop.Data
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
+
         public DbSet<Footer> Footers { set; get; }
         public DbSet<Menu> Menus { set; get; }
         public DbSet<MenuGroup> MenuGroups { set; get; }
@@ -31,9 +27,9 @@ namespace WebShop.Data
         public DbSet<SystemConfig> SystemConfigs { set; get; }
         public DbSet<Tag> Tags { set; get; }
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
+        public DbSet<Error> Errors { set; get; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
         }
     }
 }

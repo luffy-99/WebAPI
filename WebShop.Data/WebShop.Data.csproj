@@ -62,8 +62,13 @@
     <Compile Include="Migrations\201806061803298_editDatabase.Designer.cs">
       <DependentUpon>201806061803298_editDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806071629402_CreateTableError.cs" />
+    <Compile Include="Migrations\201806071629402_CreateTableError.Designer.cs">
+      <DependentUpon>201806071629402_CreateTableError.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\FooterRepository.cs" />
     <Compile Include="Repositories\MenuRepository.cs" />
     <Compile Include="Repositories\MenuGroupRepository.cs" />
@@ -103,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806061803298_editDatabase.resx">
       <DependentUpon>201806061803298_editDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806071629402_CreateTableError.resx">
+      <DependentUpon>201806071629402_CreateTableError.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
