@@ -10,7 +10,7 @@ namespace WebShop.Data.Repositories
 {
     public interface IPostCategoryRepository: IRepository<PostCategory>
     {
-
+       
     }
     public class PostCategoryRepository : RepositoryBase<PostCategory>, IPostCategoryRepository
     {
@@ -18,5 +18,6 @@ namespace WebShop.Data.Repositories
         {
 
         }
+
     }
 }
