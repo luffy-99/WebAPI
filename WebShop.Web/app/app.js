@@ -1,6 +1,6 @@
 ﻿/// <reference path="../assets/admin/libs/angular/angular.js" />
 (function () {
-    angular.module("webshop", ['webshop.products','webshop.common']).config(config);
+    angular.module("webshop", ['webshop.products', 'webshop.product_categories','webshop.common']).config(config);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('home', {

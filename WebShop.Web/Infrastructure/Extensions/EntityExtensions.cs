@@ -59,7 +59,7 @@ namespace WebShop.Web.Infrastructure.Extensions
 
             productCategory.CreatedDate = productCategoryVm.CreatedDate;
             productCategory.CreatedBy = productCategoryVm.CreatedBy;
-            productCategory.UpdatedDate = productCategoryVm.UpdateDate;
+            productCategory.UpdatedDate = productCategoryVm.UpdatedDate;
             productCategory.UpdateBy = productCategoryVm.UpdatedBy;
             productCategory.MetaKeyword = productCategoryVm.MetaKeyword;
             productCategory.MetaDescription = productCategoryVm.MetaDescription;
