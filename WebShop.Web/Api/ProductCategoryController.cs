@@ -27,7 +27,7 @@ namespace WebShop.Web.Api
 
         [Route("GetAllParent")]
         [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        public HttpResponseMessage GetAllParent(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -49,17 +49,28 @@ namespace WebShop.Web.Api
                 return response;
             });
         }
-        [Route("GetAll")]
+        [Route("getall")]
         [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pagesize=20)
+        public HttpResponseMessage GetAll(HttpRequestMessage request,string keyword, int page, int pageSize = 2)
         {
             return CreateHttpResponse(request, () =>
             {
+                int totalRow = 0;
                 var model = _productCategoryService.GetAll(keyword);
-                int totalRow = model.Count();
-                var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pagesize).Take(pagesize);
-                var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
-                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+
+                totalRow = model.Count();
+                var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+
+                var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(query);
+
+                var paginationSet = new PaginationSet<ProductCategoryViewModel>()
+                {
+                    Items = responseData,
+                    Page = page,
+                    TotalCount = totalRow,
+                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
+                };
+                var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
                 return response;
             });
         }
@@ -82,6 +93,9 @@ namespace WebShop.Web.Api
                     newProductCategory.CreatedDate = DateTime.Now;
                     _productCategoryService.Add(newProductCategory);
                     _productCategoryService.Save();
+
+                    var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newProductCategory);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
             });
@@ -100,13 +114,13 @@ namespace WebShop.Web.Api
                 }
                 else
                 {
-                    var newProductCategory = new ProductCategory();
-                    newProductCategory.UpdateProductCategory(productCategoryViewModel);
-                    newProductCategory.UpdatedDate = DateTime.Now;
-                    _productCategoryService.Update(newProductCategory);
+                    var dbProductCategory = _productCategoryService.GetById(productCategoryViewModel.ID);
+                    dbProductCategory.UpdateProductCategory(productCategoryViewModel);
+                    dbProductCategory.UpdatedDate = DateTime.Now;
+                    _productCategoryService.Update(dbProductCategory);
                     _productCategoryService.Save();
 
-                    var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newProductCategory);
+                    var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(dbProductCategory);
                     response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 }
                 return response;

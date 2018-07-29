@@ -1,1 +1,31 @@
-﻿
+﻿(function (app) {
+    app.controller('productCategoryAddController', productCategoryAddController);
+
+    productCategoryAddController.$inject = ['apiService', '$scope','notificationService','$state'];
+
+    function productCategoryAddController(apiService, $scope, notificationService, $state) {
+        $scope.productCategory = {
+            CreatedDate: new Date(),
+            Status: true
+        }
+        $scope.AddProductCategory = AddProductCategory;
+
+        function AddProductCategory() {
+            apiService.post('api/productcategory/create', $scope.productCategory, function (result) {
+                notificationService.displaySuccess(result.data.Name + ' da duoc them  moi.');
+                $state.go('product_categories');
+            }, function (error) {
+                notificationService.displayError('khong thanh cong');
+            });
+        }
+
+        function loadParentCategory() {
+            apiService.get('api/productcategory/GetAllParent', null, function (result) {
+                $scope.parentCategories = result.data;
+            }, function () {
+                console.log("Cannot get list parent");
+            });
+        }
+        loadParentCategory();
+    }
+})(angular.module('webshop.product_categories'));
