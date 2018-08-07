@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201806091658506_ChangeKey.Designer.cs">
       <DependentUpon>201806091658506_ChangeKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808040745280_adduser.cs" />
+    <Compile Include="Migrations\201808040745280_adduser.Designer.cs">
+      <DependentUpon>201808040745280_adduser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -131,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806091658506_ChangeKey.resx">
       <DependentUpon>201806091658506_ChangeKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808040745280_adduser.resx">
+      <DependentUpon>201808040745280_adduser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

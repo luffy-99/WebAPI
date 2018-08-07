@@ -16,6 +16,7 @@ using WebShop.Web.Models;
 namespace WebShop.Web.Api
 {
     [RoutePrefix("api/productcategory")]
+    [Authorize]
     public class ProductCategoryController:ApiControllerBase
     {
         
