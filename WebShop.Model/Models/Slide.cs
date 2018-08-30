@@ -7,6 +7,7 @@ namespace WebShop.Model.Models
     public class Slide
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
 
         [Required]
@@ -24,5 +25,7 @@ namespace WebShop.Model.Models
         public int? DisplayOrder { set; get; }
 
         public bool Status { set; get; }
+
+        public string Content { set; get; }
     }
 }

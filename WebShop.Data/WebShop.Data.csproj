@@ -84,6 +84,14 @@
     <Compile Include="Migrations\201808040745280_adduser.Designer.cs">
       <DependentUpon>201808040745280_adduser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808141520310_AddContentToSlide.cs" />
+    <Compile Include="Migrations\201808141520310_AddContentToSlide.Designer.cs">
+      <DependentUpon>201808141520310_AddContentToSlide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808161518074_add-product.cs" />
+    <Compile Include="Migrations\201808161518074_add-product.Designer.cs">
+      <DependentUpon>201808161518074_add-product.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -138,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808040745280_adduser.resx">
       <DependentUpon>201808040745280_adduser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808141520310_AddContentToSlide.resx">
+      <DependentUpon>201808141520310_AddContentToSlide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808161518074_add-product.resx">
+      <DependentUpon>201808161518074_add-product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
