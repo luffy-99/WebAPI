@@ -11,5 +11,7 @@ namespace WebShop.Common
         public const string ProductTag = "product";
         public const string PostTag = "post";
         public const string DefaultFooterId = "default";
+        public const int PageSize = 4;
+        public const int MaxPage = 5;
     }
 }

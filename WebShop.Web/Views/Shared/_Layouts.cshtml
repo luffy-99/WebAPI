@@ -28,18 +28,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!---->
     <div class="container">
         @RenderBody()
-    </div>
-    
-    <!---->
-    @RenderSection("homeProduct", required: false)
-    <div class="clearfix"> </div>
-    </div>
-    @{ Html.RenderAction("Category", "Home");}
-    <div class="clearfix"> </div>
+        @{ Html.RenderAction("Category", "Home");}
     </div>
 
-    <!---->
     @{ Html.RenderAction("Footer", "Home");}
     @RenderSection("footer", required: false)
+    <div class="clearfix"> </div>
 </body>
 </html>
