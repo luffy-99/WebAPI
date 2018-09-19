@@ -92,6 +92,18 @@
     <Compile Include="Migrations\201808161518074_add-product.Designer.cs">
       <DependentUpon>201808161518074_add-product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809161614121_add_quantity_to_product.cs" />
+    <Compile Include="Migrations\201809161614121_add_quantity_to_product.Designer.cs">
+      <DependentUpon>201809161614121_add_quantity_to_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809181548076_fix-Page.cs" />
+    <Compile Include="Migrations\201809181548076_fix-Page.Designer.cs">
+      <DependentUpon>201809181548076_fix-Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809181557503_identityPage.cs" />
+    <Compile Include="Migrations\201809181557503_identityPage.Designer.cs">
+      <DependentUpon>201809181557503_identityPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -152,6 +164,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808161518074_add-product.resx">
       <DependentUpon>201808161518074_add-product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809161614121_add_quantity_to_product.resx">
+      <DependentUpon>201809161614121_add_quantity_to_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809181548076_fix-Page.resx">
+      <DependentUpon>201809181548076_fix-Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809181557503_identityPage.resx">
+      <DependentUpon>201809181557503_identityPage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

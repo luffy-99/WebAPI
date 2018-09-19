@@ -8,7 +8,13 @@ namespace WebShop.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            
+
+            routes.MapRoute(
+                name: "Timkiem",
+                url: "tim-kiem",
+                defaults: new { controller = "Product", action = "Search", id = UrlParameter.Optional },
+                namespaces: new string[] { "WebShop.Web.Controllers" }
+                );
             routes.MapRoute(
                 name: "Login",
                 url: "dang-nhap",

@@ -18,7 +18,7 @@
 
         protected override void Seed(WebShop.Data.WebShopDbContext context)
         {
-            AddProduct(context);
+            AddPage(context);
             //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new WebShopDbContext()));
 
             //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new WebShopDbContext()));
@@ -119,6 +119,28 @@
             };
             context.Slides.AddRange(listSlide);
             context.SaveChanges();
+        }
+        private void AddPage(WebShopDbContext context)
+        {
+            if (context.Pages.Count() == 0)
+            {
+                var page = new Page()
+                {
+                    
+                    Name = "Gioi thieu",
+                    Alias = "gioi-thieu",
+                    Content = @"Thank you very much for your letter which arrived a few days ago. It was lovely to hear from you. 
+                                I am sorry, I haven’t written for you such along time because I studied hard to pass the final exam. However, I had agreat weekend more than every when I went to live concerts last night with my friends.
+                                Now, I am writing to tell you how the wonderful concert is.
+                                It is the beautiful concert I have ever taken part in with many people and the miracle of sound of piano.
+                                As you know,my pianist is Yiruma and in last concert I couldn’t believe that he appeared in my eyes and gave me a big hug after his performance.I also listen a soothing music which is played by him and other professional musicians.Only when I heard his song from the stage I feel anythings 
+                                around me seem to disappear and I can fly with many stars on the sky to forget all my fears which I suffered before. That is amazing.",
+                    Status = true
+                    
+                };
+                context.Pages.Add(page);
+                context.SaveChanges();
+            }
         }
     }
 

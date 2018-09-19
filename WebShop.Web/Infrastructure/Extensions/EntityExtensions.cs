@@ -65,5 +65,24 @@ namespace WebShop.Web.Infrastructure.Extensions
             productCategory.MetaDescription = productCategoryVm.MetaDescription;
             productCategory.Status = productCategoryVm.Status;
         }
+        public static void UpdateProduct(this Product product, ProductViewModel productViewModel)
+        {
+            product.ID = productViewModel.ID;
+            product.Name = productViewModel.Name;
+            product.Alias = productViewModel.Alias;
+            product.CategoryID = productViewModel.CategoryID;
+            product.Image = productViewModel.Image;
+            product.MoreImages = productViewModel.MoreImages;
+            product.Price = productViewModel.Price;
+            product.PromotionPrice = productViewModel.PromotionPrice;
+            product.Warranty = productViewModel.Warranty;
+            product.Description = productViewModel.Description;
+            product.Content = productViewModel.Content;
+            product.HomeFlag = productViewModel.HomeFlag;
+            product.HotFlag = productViewModel.HotFlag;
+            product.ViewCount = productViewModel.ViewCount;
+            product.Tags = productViewModel.Tags;
+            product.Quantity = productViewModel.Quantity;
     }
+}
 }

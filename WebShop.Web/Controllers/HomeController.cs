@@ -21,6 +21,7 @@ namespace WebShop.Web.Controllers
             this._IFooterService = IFooterService;
             this._productService = productService;
         }
+        [OutputCache(Duration = 3600, Location =System.Web.UI.OutputCacheLocation.Server)]
         public ActionResult Index()
         {
             var slideModel = _IFooterService.GetSlides();
@@ -36,14 +37,14 @@ namespace WebShop.Web.Controllers
             homeViewModel.TopSaleProduct = topSaleProductViewModel;
             return View(homeViewModel);
         }
-
+        [OutputCache(Duration = 3600, Location = System.Web.UI.OutputCacheLocation.Server)]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
-
+        [OutputCache(Duration = 60, Location = System.Web.UI.OutputCacheLocation.Server)]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -51,6 +52,7 @@ namespace WebShop.Web.Controllers
             return View();
         }
         [ChildActionOnly]
+        [OutputCache(Duration = 3600)]
         public ActionResult Footer()
         {
             var footer = _IFooterService.GetFooter();
@@ -63,6 +65,7 @@ namespace WebShop.Web.Controllers
             return PartialView("Header");
         }
         [ChildActionOnly]
+        [OutputCache(Duration =3600)]
         public ActionResult Category()
         {
             var listProductCategory = _productCategoryService.GetAll();

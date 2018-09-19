@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WebShop.Model.Abstract;
 
 namespace WebShop.Model.Models
 {
     [Table("Pages")]
-    public class Page
+    public class Page: Auditable
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { set; get; }
 
         [Required]
