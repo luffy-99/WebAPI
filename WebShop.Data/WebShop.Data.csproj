@@ -104,8 +104,17 @@
     <Compile Include="Migrations\201809181557503_identityPage.Designer.cs">
       <DependentUpon>201809181557503_identityPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809191011197_add-table-contactDetail.cs" />
+    <Compile Include="Migrations\201809191011197_add-table-contactDetail.Designer.cs">
+      <DependentUpon>201809191011197_add-table-contactDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809191026430_fix-contactDetail.cs" />
+    <Compile Include="Migrations\201809191026430_fix-contactDetail.Designer.cs">
+      <DependentUpon>201809191026430_fix-contactDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ContactDetailRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\FooterRepository.cs" />
     <Compile Include="Repositories\MenuRepository.cs" />
@@ -173,6 +182,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809181557503_identityPage.resx">
       <DependentUpon>201809181557503_identityPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809191011197_add-table-contactDetail.resx">
+      <DependentUpon>201809191011197_add-table-contactDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809191026430_fix-contactDetail.resx">
+      <DependentUpon>201809191026430_fix-contactDetail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

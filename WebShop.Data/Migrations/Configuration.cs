@@ -18,7 +18,7 @@
 
         protected override void Seed(WebShop.Data.WebShopDbContext context)
         {
-            AddPage(context);
+            AddContactDetail(context);
             //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new WebShopDbContext()));
 
             //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new WebShopDbContext()));
@@ -139,6 +139,26 @@
                     
                 };
                 context.Pages.Add(page);
+                context.SaveChanges();
+            }
+        }
+        private void AddContactDetail(WebShopDbContext context)
+        {
+            if (context.ContactDetails.Count() == 0)
+            {
+                var contactDetail = new ContactDetail()
+                {
+                    Name = " Shop thoi trang",
+                    Address = "Ngo 389 Hoang Quoc Viet",
+                    Email = "huy@gmail.com",
+                    Lat = 134.2234355,
+                    Lng = 32.13243544,
+                    Phone = "0335456576",
+                    Website = "http://webshop.com.vn",
+                    Other = "",
+                    Status = true
+                };
+                context.ContactDetails.Add(contactDetail);
                 context.SaveChanges();
             }
         }
